@@ -1,0 +1,85 @@
+# Noc informatyka - Ghost in the shell #
+
+## ideas ##
+
+    - Why terminal?
+    - terminale: putty, guake, terminator, clusterssh
+    - TPP vs LibreOffice
+    - bash vs zsh
+        - tab completion / expanding (paths + remote, variables)
+        - shared term.history
+        - spelling correction
+        - modules, modules
+        - oh my zsh / demo
+    - screen vs tmux
+        - vsplit
+        - client / server
+        - synch - panes
+        - tty
+        - demo
+    - openvpn / cloaking / privacy
+        - one place to communicate
+        - security / privacy
+    - IRC: irssi
+        - collaboration w/opensource
+        - devops - infocenter
+        - skype, facebook chat - bitlbee
+        - flowdock
+        - irssi vs weechat
+        - irc is awesome... and still no.1
+        - demo
+    - finch
+        - xmpp (fb, g+), gg, aim, msn, yahoo, icq, irc)
+        - demo
+    - earthquake / Docker
+        - twitter
+        - why docker? fedora - dockerfiles
+        - demo
+    - newsbeuter
+        - rss / atom reader
+        - ttrss / android
+        - demo
+    - owncloud
+        - owncloudcmd / dropbox || glusterfs
+    - VIM
+        - why eclipse sucks?
+        - tutorials
+            - weekly cheat sheets http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html
+            - Ultimate vimrc: https://github.com/amix/vimrc
+            - pathogen
+        - devenv
+            - Gundo
+            - resize windows: http://vim.wikia.com/wiki/Fast_window_resizing_with_plus/minus_keys
+        - MarkDown
+        - Gist
+        - Git
+        - vim-gpg
+        - calendar
+            - demo (G)
+        - FB
+            - facebook_terminal_client / fork
+            - facebook.vim
+            - demo
+    - mutt
+        - macros & scripts
+        - community
+        - alternate personalities
+        - bindkeys
+        - threads
+        - address books
+        - gpg integration
+        - html view
+        - searching via mailrix / normal search
+        - roundcube
+    - GTD (nie ogarnięty jeszcze):
+        - taskwarrior http://taskwarrior.org/
+        - tasknc https://github.com/mjheagle8/tasknc
+        - vim-taskwarrior https://github.com/farseer90718/vim-taskwarrior
+    - Evernote
+        - geeknote http://www.geeknote.me
+        - evervim
+    - Google Chrome
+        - vimium
+        - quick tabs
+        - Keyboard Navigation
+    - mobile

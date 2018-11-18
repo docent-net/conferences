@@ -1,0 +1,22 @@
+- name: portscan example
+
+  vars:
+      ports:
+          tcp:
+              - 80
+              - 443
+  gather_facts: false
+  hosts: localhost
+  sudo: yes
+
+  tasks:
+    - name: run portscan
+      shell: /usr/bin/nmap -sS -p {{ ports.tcp|join(",") }} localhost > scan_results
+
+#    - name: Parse results
+#      shell: python parse.py {{ ports.tcp }}
+
+#    - name: Display output
+#      debug: var=scan_results.stdout
+#    - name: fail: Found illegal ports opened
+#      when: 

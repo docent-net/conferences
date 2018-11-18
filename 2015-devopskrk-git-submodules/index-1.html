@@ -1,0 +1,96 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h2 id="class-center-middle">class: center, middle</h2>
+<p>template: default</p>
+<p><img alt="Default-aligned image" src="git-1.png"/></p>
+<h1 id="git-submodules">Git submodules</h1>
+<h1 id="devops-meetup-krk">Devops Meetup Krk</h1>
+<p>2015-06-17<br/>
+Maciej Lasyk</p>
+<hr/>
+<p>template: default</p>
+<h1 id="git-submodules-wtf">GIT submodules - WTF?</h1>
+<hr/>
+<p>template: default</p>
+<h2 id="pl-moduy-zalezne">PL: moduły zależne</h2>
+<hr/>
+<p>template: default</p>
+<p>```bash
+ git submodule add <URL> <dirname/></URL></p>
+<p>git status</p>
+<p>git diff --cached --submodule
+```</p>
+<hr/>
+<p>template: default</p>
+<p>.gitmodules
+<code>bash
+[submodule "ansible-piwik"]
+        path = ansible-piwik
+        url = git@github.com:docent-net/ansible-piwik.git</code></p>
+<hr/>
+<p>template: default</p>
+<h2 id="cloning-repos-wsubmodules">Cloning repos w/submodules?</h2>
+<p><code>bash
+git clone &lt;URL&gt; # just standard content without submodules data</code></p>
+<hr/>
+<p>template: default</p>
+<h2 id="cloning-repos-wsubmodules_1">Cloning repos w/submodules?</h2>
+<p><code>bash
+git submodule init
+git sumobule update</code></p>
+<hr/>
+<p>template: default</p>
+<h2 id="cloning-repos-wsubmodules_2">Cloning repos w/submodules?</h2>
+<p><code>bash
+git clone --recursive &lt;URL&gt;</code></p>
+<hr/>
+<p>template: default</p>
+<h2 id="update-submodule-code-to-the-latest-revision">Update submodule code to the latest revision?</h2>
+<p>```bash</p>
+<h1 id="run-in-submodule-dir">run in submodule dir</h1>
+<p>git fetch
+git merge <origin master="">
+```</origin></p>
+<p>```bash</p>
+<h1 id="updates-all-submodules-data">updates all submodules data</h1>
+<h1 id="run-from-maindir">run from maindir</h1>
+<p>git submodule update --remote
+```</p>
+<hr/>
+<p>template: default</p>
+<h2 id="change-submodule-branch">Change submodule branch?</h2>
+<ul>
+<li>.gitmodules</li>
+<li>~/.git/config</li>
+</ul>
+<hr/>
+<p>template: default</p>
+<h3 id="by-default-detach-head-state">by default: detach HEAD state</h3>
+<p><code>bash
+git checkout &lt;branch&gt;
+git submodule update --remote merge</code></p>
+<hr/>
+<p>template: default</p>
+<h3 id="pushing-changes">Pushing changes?</h3>
+<p><code>bash
+git push --recurse-submodules</code></p>
+<hr/>
+<p>template: default</p>
+<h3 id="removing-submodule">Removing submodule?</h3>
+<p>```bash</p>
+<h1 id="edit-gitmodules">edit .gitmodules</h1>
+<p>git rm --cached <submodule-dir/></p>
+<h1 id="commit-change">commit change</h1>
+<h2 id="_1">```</h2>
+<p>template: default</p>
+<h3 id="foreach">foreach</h3>
+<p><code>bash
+git submodule foreach 'git diff'
+git submodule foreach 'git pull'</code></p>
+<hr/>
+<p>template: default</p>
+<p><img alt="Default-aligned image" src="git-2.png"/></p>
+<h1 id="thanks">Thanks :)</h1>
+<h3 id="maciej-lasyk">Maciej Lasyk</h3>
+<p>@docent-net<br/>
+http://maciej.lasyk.info</p>
+</body></html>

@@ -1,0 +1,91 @@
+
+- intro
+- whoami
+- fedora project
+- about node.js
+    - history of operation (start, stability) https://en.wikipedia.org/wiki/Nodejs
+    - eventloop & SPA
+    - concurrency
+        - no concurrency? no issues
+        - scaling is really easy
+    - architecture & templates? 3 ways:
+        - low - level
+        - classic:
+            - webserver? express
+            - client-server / MVC? Backbone
+            - push? Socket.IO
+            - templates? swig
+            - i18n? babelfish
+            - Client side? Jquery
+        - kraken.js
+            - lusca 4 security
+            - kappa as npm proxy
+            - makara 4 i18n
+            - LinkedIn's Dust / Adaro 4 templates
+- security
+    - basic JS considerations
+        - classical approach: 
+            - JS is for children - wrong!
+            - JS is slow - wrong! (v8)
+            - JS is not scalable - wrong! (see frameworks)
+            - JS is insecure - wrong! (unless you really don't know it)
+            - etc... wrong! ;)
+        - evals & co
+        - global namespace pollution
+        - object properties
+        - static code analysis
+            - + http://bekk.github.io/retire.js/
+        - strict
+    - node.js
+        - sec lists & exploits
+        - what's wrong?
+        - obrazki sec :)
+        - exceptions / callbacks
+        - eventemitter
+        - uncaught exceptions
+        - domains
+        - npm modules
+            - maybe own?
+              http://stackoverflow.com/questions/14609131/can-i-run-a-private-npm-repository-without-replicating-the-public-repository
+        - express for the resscue
+            - basic auth
+            - could be done also with SSL keys (but really? perf bad!)
+            - passport.js
+            - auth
+            - logging
+            - sessions
+        - common threats:
+            - CSRF
+            - input.validation
+            - XSS
+            - DoS
+            - ReDoS
+            - HPP
+            - HTTP_headers
+            - HSTS
+            - request_size
+        - monitoring?
+        - sandboxing
+            - selinux sandbox
+            - libvirtd sandbox
+            - LXC / Docker
+        - ACLs
+        - tracing execution
+        - testing
+        - hiring a guy?
+            - http://jobs.nodejs.org/a/jobs/find-jobs
+- scalability & perf
+    - c10k problem: http://www.kegel.com/c10k.html
+    - clusters
+    - from paypal / release the kracken:
+        - team scalability: node.js programming is much faster! PayPal: 2 vs 12
+        - lower response times!
+        - double the requests / second
+    - containers ftw
+    - resources management
+- what more?
+    - backbone.js:
+    - swig - loved jinja2? you'll love swig
+- would you like to know more?
+    - meetups (devops, meet.js)
+    - docker workshops

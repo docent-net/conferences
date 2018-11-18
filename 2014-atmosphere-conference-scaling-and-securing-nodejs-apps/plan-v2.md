@@ -1,0 +1,72 @@
+- intro
+- whoami
+- fedora project
+- so what do u think about JS? (starter)
+
+- about node.js
+    - history
+    - eventloop & spa & concurrency (wyjaśnić ten thread workera)
+    - how did we develop our development?
+        - raw node.js coding
+        - let's use some frameworks
+        - even more frameworks
+
+- securing node.js
+    - classical JS issues
+        - evals & co
+        - global namespace pollution
+        - object properties
+        - how to defend || prevent?
+            - static code analysis
+            - strict mode
+    - node.js
+        - sec lists & exploits
+        - what's wrong?
+        - exceptions / callbacks
+        - eventemitter
+        - uncaught exceptions
+        - domains
+        - npm modules
+            - + own repo
+        - express 4 the rescue
+            - basic auth
+            - ssl auth
+            - passport.js
+            - authorization
+            - logging
+            - sessions
+        - common threats
+            - csrf
+            - input validation
+            - xss
+            - dos
+            - redos
+            - hpp
+            - http_headers
+            - hsts
+            - request_size
+        - monitoring?
+        - sandboxing?
+            - obrazki sec
+            - selinux sandbox
+            - libvirtd sandbox
+            - containers
+        - ACLs
+        - tracing execution
+        - testing
+
+- scaling node.js
+    - c10k problem
+    - clusters
+    - scaling over containers
+    - resource management
+- node.js performance
+    - just see paypal & kraken.js (url do prezek)
+
+- so what do u think about JS? (end)
+- so - how to hire a node.js guy? (+ url)
+
+- would you like to know more?
+    - meetups (devops, meet.js)
+    - docker workshops
+- finish

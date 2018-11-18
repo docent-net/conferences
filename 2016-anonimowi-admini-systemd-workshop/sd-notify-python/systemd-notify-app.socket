@@ -1,0 +1,8 @@
+[Unit]
+Description=Socket activation for simple systemd-notify app
+
+[Socket]
+ListenStream=1025
+
+[Install]
+WantedBy=sockets.target

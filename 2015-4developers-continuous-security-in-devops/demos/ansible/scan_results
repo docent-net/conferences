@@ -1,0 +1,10 @@
+
+Starting Nmap 6.47 ( http://nmap.org ) at 2015-04-20 06:57 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000085s latency).
+rDNS record for 127.0.0.1: localhost.localdomain
+PORT    STATE  SERVICE
+80/tcp  open   http
+443/tcp closed https
+
+Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds

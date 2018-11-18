@@ -1,0 +1,92 @@
+
+- javascript security
+    - evals & co
+    - global namespace pollution
+        - variables, functions as variables (pdf)
+        - with
+        - sekurak :)
+    - strict mode (pdf)
+        - evernote
+    - object properties (writable, readable, enumerable)
+    - static code analysis
+        - sprawdzić czy na pewno to do tego służy ;) JSLint JSHint
+- about node.js
+    - current version & stable/unstable issue
+    - event loop
+        - 6 http://www.slideshare.net/ASF-WS/asfws-2012-nodejs-security-old-vulnerabilities-in-new-dresses-par-sven-vetsch
+    - concurrency
+    - SPA (sekurak)
+- node.js security
+    - sec lists & exploits?
+    - what's wrong here by default?
+    - node.js security is white page
+        - 35 http://www.slideshare.net/ASF-WS/asfws-2012-nodejs-security-old-vulnerabilities-in-new-dresses-par-sven-vetsch
+    - exceptions
+        - callbacks / exceptions
+        - eventemitter error handling
+        - uncaught exceptions
+    - domains
+    - npm modules (3rd party code)
+        - evernote
+    - Express
+        - Connect -> Express
+        - Authentication
+            - Basic auth
+            - Digest auth
+            - Passport.js
+                - OpenID
+                - OAuth
+        - Authorization
+        - Logging
+        - Error handling
+        - Session Management: 
+            - https://blog.liftsecurity.io/2012/12/07/writing-secure-express-js-apps
+            - http://blog.modulus.io/nodejs-and-express-sessions
+    - Common security issues
+        - CSRF + slajd
+            - http://blog.nibblesec.org/2014/05/nodejs-connect-csrf-bypass-abusing.html?m=1
+            - https://blog.liftsecurity.io/2012/12/07/writing-secure-express-js-apps
+        - Input validation
+        - XSS + slajd
+        - DoS
+        - ReDoS slajd + pdf
+        - HPP - slajd
+        - HTTP Headers
+            - Content Security Policy + slajd
+            - HSTS
+            - X-Frame-Options
+            - X-XSS-Protection
+            - X-content-Type-Options
+            - Cache-Control
+            - X-Powered-By! slajd
+            - i sprawdzić jeszcze to: https://blog.liftsecurity.io/2012/12/07/writing-secure-express-js-apps
+        - Cookie names
+            - slajd: http_only, secure (28)
+        - Directory traversal???
+            - http://glamour.tweakblogs.net/blog/8476/node-punt-jss-null-terminator-of-death.html
+        - evil eval: http://bishankochher.blogspot.com/2011/12/nodejs-security-good-bad-and-ugly.html
+        - global namespace pollution: http://bishankochher.blogspot.com/2012/02/nodejs-global-namespace-pollution.html
+        - with: http://bishankochher.blogspot.com/2012/02/nodejs-with-is-evil.html
+        - switch: http://bishankochher.blogspot.com/2012/02/nodejs-switch-is-evil.html
+        - opening files bug?: https://medium.com/programming-ideas-tutorial-and-experience/d7de566d499f
+        - request size (book)
+            - chunk size (buf.length) - pdf
+    - SSL: http://www.gettingcirrius.com/2012/06/securing-nodejs-and-express-with-ssl.html
+    - Environment
+        - monitoring
+        - process monitoring
+            - monitoring event loop responsiveness
+        - controlg groups - limiting resources usage
+        - sandboxes (selinux, libvirt sandbox, lxc, docker)
+        - proper user... not root (evernote)
+        - bunyan dtrace and smartos (joyent)
+    - Testing
+        - white / black box pentesting?
+        - unit testing?
+        - input fuzzing slajd
+        - OWASP Zed Attack Proxy 4 security testing during product development
+    - node-webkit? Evernote...
+    - Learning?
+        - Node Security book
+        - OWASP Node Goat
+        - nodesecurity.io

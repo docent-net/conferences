@@ -1,0 +1,7 @@
+[Exec]
+Boot=on
+User=root
+PrivateUsers=on
+
+[Network]
+Bridge=virbr0

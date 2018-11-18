@@ -1,0 +1,10 @@
+[Unit]
+Description=Simple sd-notify integration application
+
+[Service]
+Type=notify
+Restart=always
+ExecStart=/usr/bin/python3 /home/docent/git/conferences/systemd-devops-meetup-wroclaw-2016/sd-notify-python/sd-notify-app-service.py
+
+[Install]
+WantedBy=multi-user.target

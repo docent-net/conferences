@@ -1,0 +1,155 @@
+#!/usr/bin/env pinpoint
+
+[bg.jpg]
+[font=Sans 50px]
+[duration=5.000000]
+-- [duration=4.448699]
+Welcome to pinpoint
+
+-- [duration=3.393199]
+A tool for making excellent presentations
+
+-- [bowls.jpg] [duration=4.322308]
+It has a simple text source
+#The source can include witty comment lines!
+#These comments should fit on screen
+#The comments wrap
+#Using up/down should overstrike the speaker points?
+-- [font=monospace 18px] [shading-opacity=1.000000] [duration=23.560078]
+The current presentation thus far:
+ #!/usr/bin/env pinpoint
+ [font=Sans 50px]
+ [bg.jpg]
+ 
+ - The bits above this point are defaults for every slide in the presentation
+ Welcome to pinpoint
+
+ - lines starting with - are slide separators.
+ A tool for making excellent presentations
+
+ - [bowls.jpg] You can override the defaults with with per-slide properties
+ It has a simple text source
+ # The source can include witty comment lines
+
+ - [font=monospace 18px] [shading-opacity=1.0]
+ The current presentation thus far:
+#Should break this into smaller bits/slides
+-- [text-align=center] [duration=12.553503]
+You start by writing down the core concepts that you will be talking about. Then sort and format
+them as a pinpoint presentation in a text editor of your choice. 
+
+If this was a presentation given as a demonstration of pinpoint you would now be trying to read
+this slide as well as pay attention to what is said. Less than ideal.
+
+Pinpoint reloads the presentation when it changes on disk, very useful when you're tuning things
+so keep both pinpoint and your text editor open. And remember, the less text you have, the happier
+your audience will be ;-)
+
+-- [duration=3.136431]
+Let's use some of the more 
+esoteric features of pinpoint
+
+-- [bowls.jpg] [text-align=center] [duration=5.757168]
+ - [filename.jpg]
+set a custom background for an individual slide
+
+-- [bunny.ogv] [fill] [duration=24.458597]
+You can put <b>anything</b> in the background
+
+-- [linus.jpg] [fill] [bottom-left] [duration=3.724967]
+But, slides with cat pictures are best
+
+-- [text-align=right] [top-right] [duration=1.879800]
+position text in the
+[top-right]
+
+-- [right] [duration=1.031598]
+[right]
+
+-- [bottom-right] [duration=1.064696]
+[bottom-right]
+
+-- [bottom] [duration=1.047646]
+[bottom]
+
+-- [bottom-left] [duration=1.132064]
+[bottom-left]
+
+-- [left] [duration=1.014935]
+[left]
+
+-- [top-left] [duration=1.214729]
+[top-left]
+
+-- [top] [duration=1.747087]
+[top]
+
+-- [text-align=center] [duration=4.109942]
+and even in the
+[center]
+(which is the default)
+
+-- [white] [bottom] [font=Monospace 100px] [text-color=black] [shading-opacity=0.000000] [duration=7.491852]
+Make text big!
+[font=Monospace 100px]
+[white][text-color=black]
+[shading-opacity=0.0][bottom]
+
+-- [duration=2.912952]
+<s>use</s> <b>pango</b> <i
+><span foreground='red'>m<u
+>ar</u>k<sup>up</sup></span></i> for style
+
+-- [duration=4.263503] [no-markup]
+[no-markup]
+<s>don't use</s> <b>pango</b> <i
+><span foreground='red'>m<u
+>ar</u>k<sup>up</sup></span></i>
+
+-- [bowls.jpg] [transition=page-curl-both] [duration=4.935558]
+need bullets?
+ ❥ use the power of unicode
+• ✽ ✩ ✔ ☃ ◦
+
+-- [transition=text-slide-up] [duration=6.881204]
+$ pinpoint presentation.txt -o output.pdf
+Export to PDF. Handy.
+
+-- [fill] [duration=3.903439]
+[fill]
+Fill the slide with your background
+(the default is [fit])
+
+-- [transition=swing] [duration=2.679214]
+Keybindings:
+
+-- [transition=sheet] [duration=2.913154]
+right, down or space - next slide
+
+-- [transition=slide-left] [duration=4.702688]
+left or up - previous slide
+
+-- [transition=sheet] [duration=3.435221]
+B - blanking of screen
+
+-- [transition=slide-up] [duration=3.435221]
+F11 - toggle fullscreen!
+
+-- [transition=text-slide-down] [duration=2.167284]
+Escape - quit pinpoint
+
+-- [fill] [transition=slide-in-left] [command=killall xeyes ; xeyes] [duration=16.965691]
+Enter - Run command
+Tab - Edit command
+[command=killall xeyes ; xeyes]
+
+N.B. run pinpoint with the -m option
+and hidden or auto-hiding panels, to
+allow window management in fullscreen.
+
+-- [linus.jpg] [fill] [bottom-right] [duration=7.079270]
+That's pretty much everything. 
+Told you it was simple.
+
+-- [black] [font=Sans 100px] [transition=spin-text]
+FIN

@@ -1,0 +1,10 @@
+[Distribution]
+Distribution=fedora
+Release=26
+
+[Output]
+Format=directory
+
+[Packages]
+Packages=openssh-clients vim-enhanced net-tools iproute iputils dnf rootfiles openssh-server python3 python2
+BuildPackages=make gcc libcurl-devel

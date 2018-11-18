@@ -1,0 +1,127 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<p>class: center, middle
+count: false</p>
+<hr/>
+<p>name: left
+layout: true</p>
+<p>class: left, middle
+count: false</p>
+<hr/>
+<p>template: default</p>
+<h1 id="google-cloud-platform-and-terraform-diary-of-a-combatant">Google Cloud Platform and Terraform: diary of a combatant</h1>
+<h2 id="devopskrk-10">DevOpsKRK #10</h2>
+<p>2018-01-17<br/>
+Maciej Lasyk</p>
+<hr/>
+<p>template: left</p>
+<h1 id="why">Why?</h1>
+<p>--</p>
+<ul>
+<li>client: </li>
+<li>we need this something outside of AWS</li>
+</ul>
+<p>--</p>
+<ul>
+<li>developers:</li>
+<li>make it self healing</li>
+<li>all infra in code</li>
+<li>best is self manage'able xD</li>
+</ul>
+<p>--</p>
+<ul>
+<li>me:</li>
+<li>wrappable in Rundeck</li>
+</ul>
+<hr/>
+<p>template: default</p>
+<h1 id="google-cloud-platform">Google Cloud Platform</h1>
+<p>.left[
+- outside of AWS
+- You get $300 for starters for 12 months
+- there's "always free" tier
+- it's rather stable these days (been working in GCP for almost 2 years now)
+]</p>
+<hr/>
+<p>template: default</p>
+<h1 id="terraform">Terraform</h1>
+<p>.left[
+- now you probably know everything about it
+- plus it has GCP modules
+- can be easily integrated w/Rundeck
+] </p>
+<hr/>
+<p>template: default</p>
+<h1 id="so-what-we-wanna-do">So what we wanna do?</h1>
+<p><img alt="swing" src="project-2.jpg"/></p>
+<hr/>
+<p>template: default</p>
+<p><img alt=":scale 100%" src="schema-simple-2.png"/></p>
+<hr/>
+<p>template: default</p>
+<p><img alt=":scale 100%" src="schema-simple2-2.png"/></p>
+<p>template: default</p>
+<hr/>
+<p>template: default</p>
+<p><img alt=":scale 100%" src="schema-simple3-2.png"/></p>
+<p>template: default</p>
+<hr/>
+<p>template: default</p>
+<p><img alt=":scale 100%" src="schema-simple4-2.png"/></p>
+<p>template: default</p>
+<hr/>
+<p>template: default</p>
+<p><img alt=":scale 100%" src="schema-simple5-2.png"/></p>
+<p>template: default</p>
+<hr/>
+<h1 id="bootstrapping-gcp-project">Bootstrapping GCP project</h1>
+<p>There need to be something before Terraform:</p>
+<p>.left[
+<code>bash
+gcloud auth login
+gcloud projects create dlugodystansowy-pl --name=dlugodystansowy-pl \
+    --organization=666666666
+gcloud beta billing projects link dlugodystansowy-pl \
+    --billing-account=99999999
+gcloud config set project dlugodystansowy-pl
+gcloud iam service-accounts create terraform --display-name=terraform
+gcloud iam service-accounts keys create gce-terraform-key.json \
+    --iam-account=terraform@dlugodystansowy-pl.iam.gserviceaccount.com
+export GOOGLE_APPLICATION_CREDENTIALS=/somewhere/dlugodystansowy-pl-gce-terraform-key.json
+gsutil mb -p dlugodystansowy-pl -c multi_regional gs://dl-terraform-states
+gsutil acl ch -u terraform@dlugodystansowy-pl.iam.gserviceaccount.com:W \
+    gs://dl-terraform-states
+gcloud service-management enable compute.googleapis.com
+gcloud service-management enable iam.googleapis.com
+gcloud service-management enable cloudresourcemanager.googleapis.com
+gcloud projects add-iam-policy-binding dlugodystansowy-pl --member \
+    serviceAccount:terraform@dlugodystansowy-pl.iam.gserviceaccount.com --role roles/owner</code>
+]</p>
+<hr/>
+<p>template: default</p>
+<h1 id="terraform_1">Terraform</h1>
+<p>And now only: <strong>terraform plan &amp;&amp; apply</strong></p>
+<p>Even <strong>terraform destroy</strong> works these days :)</p>
+<hr/>
+<p>template: default</p>
+<h1 id="xd">xD</h1>
+<p>.left[
+- null_resource / local-exec &amp; depends-on
+- IAM is not atomic like iptables - watch out for possible race - conditions(!)
+- check twice if module is idempotent(!)
+]</p>
+<hr/>
+<p>template: default</p>
+<h1 id="bonus-workspaces">bonus: workspaces</h1>
+<p><img alt=":scale 100%" src="ohmyzsh2-2.png"/></p>
+<hr/>
+<p>template: default</p>
+<h1 id="bonus-workspaces_1">bonus: workspaces</h1>
+<p><img alt=":scale 100%" src="ohmyzsh-2.png"/></p>
+<hr/>
+<p>template: default</p>
+<h1 id="thanks-qa">Thanks, Q&amp;A?</h1>
+<p>.left[
+- slides: <a href="https://maciej.lasyk.info/2018/Jan/17/devops-meetups-krakow/">https://maciej.lasyk.info/2018/Jan/17/devops-meetups-krakow/</a>
+- code: <a href="https://github.com/docent-net/dlugodystansowy.pl">https://github.com/docent-net/dlugodystansowy.pl</a>
+]</p>
+</body></html>

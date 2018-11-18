@@ -1,0 +1,62 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<p><img alt="PID1 for the sake!" src="http://maciej.lasyk.info/images/pid1.png" /></p>
+<h1 id="systemd-workshop">systemd-workshop</h1>
+<p>The main goal of this workshop is to introduce various aspects of systemd to
+all of you who haven't used it extensively yet.</p>
+<h2 id="requirements">Requirements</h2>
+<p>Our main requirement is having Linux distribution with systemd version at least
+<strong>229</strong>. It might be installed on some virtual machine on your laptop. Just
+make sure it works and running following command returns required systemd
+version:</p>
+<p><code>$ systemctl --version
+systemd 229</code></p>
+<p>You may install <a href="https://getfedora.org/">Fedora 24</a> (server or workstation
+edition) - it already has systemd 229 installed.</p>
+<p>Second requirement would be having installed Python in the 2.7 version (that's
+ok to have 3.x also, but it'll be up to you to make our code work on 3.x; we
+try to keep codebase as simple as possible in order to focus on what's really
+important). It'd be also very convenient to have
+<a href="git@github.com:docent-net/systemd-workshop.git">virtualenvwrapper</a>, but that's
+not a really requirement as long as you're ok with installing system - wide
+libraries on your laptop (or VM).</p>
+<p>Third requirement is <strong>git</strong>. That's ok if you're not very fluent with it -
+we'll show you what to do.</p>
+<h2 id="how-to-register">How to register?</h2>
+<p>Registrations starts 17th Nov 2016 at 18:00 on http://systemd.evenea.pl</p>
+<p>We've got 25 slots.</p>
+<h2 id="whos-the-organizer">Who's the organizer?</h2>
+<p>That's actually community event. Organizer would be <a href="https://www.meetup.com/AnonimowiAdmini/">Anonymous Admins
+group</a></p>
+<h2 id="venue">Venue?</h2>
+<p>That will be <a href="https://goo.gl/zDxemw">Lumesse office in KrakÃ³w</a></p>
+<h3 id="wifi">WIFI?</h3>
+<p><strong>Lumesse-Guest</strong> / <strong>Lumesse4488</strong></p>
+<h2 id="when">When?</h2>
+<p>26th November 2016, 11:00</p>
+<h2 id="whos-gonna-be-the-teacher">Who's gonna be the teacher?</h2>
+<p><a href="https://www.linkedin.com/in/marcinskarbek">Marcin Skarbek</a> and <a href="https://www.linkedin.com/in/maciej-lasyk-04819942">Maciej Lasyk</a></p>
+<h2 id="agenda">Agenda</h2>
+<h3 id="systemd-bin-systemd-binmd">systemd-bin - <a href="systemd-bin.md">systemd-bin.md</a></h3>
+<p>During this part we'll discover various binaries provided by systemd and use
+some ot those.</p>
+<h3 id="unit-files">unit files</h3>
+<p>Unit files are a basic configuration tools in systemd which define behaviour for the whole system.
+We'll learn what types of unit files systemd provides, what is the purpose of them
+and how to correctly write a new one. Thanks to that knowledge both creating quick ad hoc <code>service</code>
+and fairly complicated chain of <code>services</code> in separate <code>target</code> shouldn't be a problem. </p>
+<h3 id="journald-systemd-journalmd">journald <a href="systemd-journal.md">systemd-journal.md</a></h3>
+<p>Here be dragons. We'll dive into specifics of managing logs with journald.
+Starting with reading logs and finishing on creating very specific queries. If
+there's enough time maybe we'll try to push logs to central repository?</p>
+<h3 id="systemd-nspawn">systemd-nspawn</h3>
+<p>We don't need Docker to play with containers, systemd-nspawn will let you run
+both system and aplication containers providing stable workflow and predictable behaviour.
+We'll learn how to create containers, restrict their capabilities and resources
+and write custom unit files for them. We'll also try to run Docker container under
+systemd-nspawn supervision to understand differences and strong/weak points in both sollutions. </p>
+<h3 id="developing-systemd-aware-apps-until-you-die-systemd-notifymd">developing systemd-aware apps (until you die) <a href="systemd-notify.md">systemd-notify.md</a></h3>
+<p>We'll learn how to integrate Python (and maybe C and Java?) applications with 
+systemd making systemd aware of applications' state. Thanks to that application 
+operational aspects like automated failover, restart and others will be done 
+without manual intervention and in a clear, and proper way.</p>
+</body></html>

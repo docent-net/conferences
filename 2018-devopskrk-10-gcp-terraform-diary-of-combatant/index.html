@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://127.0.0.1:8666/Merriweather.css" rel="stylesheet">
+    <style type="text/css">
+    html *
+    {
+      font-family: 'Merriweather', serif;
+    }
+      h1, h2, h3 {
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="http://127.0.0.1:8666/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        remark.macros.scale = function (percentage) {
+              var url = this;
+              return '<img src="' + url + '" style="width: ' + percentage + '" />';
+        };
+    var slideshow = remark.create({
+	  sourceUrl: 'slides.md'
+    });
+    </script>
+  </body>
+</html>

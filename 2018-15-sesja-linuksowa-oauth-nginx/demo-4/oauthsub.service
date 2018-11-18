@@ -1,0 +1,12 @@
+[Unit]
+Description=oauthsub service
+After=nginx.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/oauthsub -c /etc/oauthsub.py
+User=nginx
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

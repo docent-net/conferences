@@ -1,0 +1,9 @@
+- name: Start web servers
+  hosts: localhost
+  tasks:
+    docker: >
+        name=webstack
+        state=present
+        image=fedora-ansible-docker-nginx
+        command="/usr/sbin/nginx"
+        ports=127.0.0.1:83:80

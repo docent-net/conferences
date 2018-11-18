@@ -1,0 +1,81 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<ol>
+<li>About systemd (init &amp; service manager)</li>
+<li>systemd-bin (30min)<ol>
+<li>RTM (wdech, wydech, czytać, zapomnieć o tym co było)</li>
+<li>systemctl</li>
+<li>analyzing boot process</li>
+<li>coredumps</li>
+<li>cgroups</li>
+<li>FHS!</li>
+<li>detecting virtualization</li>
+<li>DNS</li>
+<li>finger</li>
+<li>time management</li>
+<li>inhibit :)</li>
+<li>bus / d-bus / demo</li>
+<li>process confinement</li>
+</ol>
+</li>
+<li>services &amp; unit files (15min)<ol>
+<li>declarativeness<ol>
+<li>httpd sysv example</li>
+<li>unit file example</li>
+</ol>
+</li>
+<li>types of units</li>
+<li>runlevels &amp; targets</li>
+<li>Dependencies<ol>
+<li>Requires, Requisite, Wants, BindsTo, PartOf, Conflicts, Before,
+   After, OnFailure, PropagatesReloadTo, ReloadPropagatedFrom,
+   StopWhenUnneeded, DefaultDependencies, WantedBy, RequiredBy, Also</li>
+</ol>
+</li>
+<li>Starting after installation</li>
+<li>Cronjobs / Timers</li>
+<li>Socket activation</li>
+<li>cgroups control<ol>
+<li>CPUShares, CPUAccounting, MemoryAccounting, MemoryLimit,
+   BlockIOAccounting, BlockIOWeight, BlockIOReadBandwidth,
+   BlockIOWriteBandwidth</li>
+</ol>
+</li>
+<li>Defining kill method</li>
+<li>Debugabbility</li>
+<li>GUI? http://127.0.0.1:9090</li>
+<li>sysv import?<ol>
+<li>Systemd maintains 99% backwards compatibility with LSB 
+   compatible initscripts and the exceptions are well documented</li>
+<li>No need to convert</li>
+<li>http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities/</li>
+<li>http://0pointer.de/blog/projects/systemd-for-admins-3.html</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>journal (25min)</p>
+</li>
+<li>
+<p>nspawn containers (5min)</p>
+<ol>
+<li>very simple containers</li>
+<li>no daemon behind</li>
+<li>no need to do anything with storage or network</li>
+<li>just dnf / yum install and go!</li>
+<li>like this (demo?):<ol>
+<li>dnf --releasever=25 --installroot=/var/lib/machines/f25
+   install systemd passwd dnf fedora-release </li>
+<li>systemd-nspawn -D /var/lib/container/f25</li>
+<li>passwd</li>
+<li>cp /usr/lib/systemd/system/systemd-npawn\@.service
+   /etc/systemd/system/systemd-nspawn@f25.service</li>
+<li>systemctl enable --now systemd-nspawn@f25.service</li>
+</ol>
+</li>
+<li>machinectl</li>
+</ol>
+</li>
+<li>sd-notify (15min)</li>
+</ol>
+</body></html>

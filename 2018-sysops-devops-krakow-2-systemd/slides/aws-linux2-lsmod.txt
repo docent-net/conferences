@@ -1,0 +1,36 @@
+Module                  Size  Used by
+ablk_helper             3485  1 aesni_intel
+aesni_intel           160533  0 
+aes_x86_64              8107  1 aesni_intel
+ata_piix               27124  0 
+auth_rpcgss            53136  1 nfsd
+autofs4                36323  2 
+button                  8294  0 
+crc32c_intel           13628  1 
+crc32_pclmul            3238  0 
+crc_ccitt               2019  1 ipv6
+cryptd                 11844  3 ablk_helper,ghash_clmulni_intel,aesni_intel
+dm_log                  9631  2 dm_mirror,dm_region_hash
+dm_mirror              14513  0 
+dm_mod                108387  2 dm_mirror,dm_log
+dm_region_hash         11213  1 dm_mirror
+ena                    79007  0 
+evdev                  12260  2 
+gf128mul                8457  1 lrw
+ghash_clmulni_intel     4765  0 
+glue_helper             5347  1 aesni_intel
+grace                   2955  2 nfsd,lockd
+ip_tables              16852  0 
+ipv6                  413631  50 
+libata                242638  1 ata_piix
+libcrc32c               1580  1 xfs
+lockd                  82193  1 nfsd
+lrw                     4582  1 aesni_intel
+mousedev               11989  0 
+nfs_acl                 3365  1 nfsd
+nfsd                  299842  1 
+psmouse                19386  0 
+scsi_mod              220954  1 libata
+sunrpc                336688  7 auth_rpcgss,nfsd,nfs_acl,lockd
+xfs                  1205564  1 
+x_tables               26779  1 ip_tables

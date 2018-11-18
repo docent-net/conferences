@@ -1,0 +1,10 @@
+[Unit]
+Description=Simple Journal writer application
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /home/docent/git/conferences/systemd-workshop/journal-python/journal-app-service.py
+
+[Install]
+WantedBy=multi-user.target

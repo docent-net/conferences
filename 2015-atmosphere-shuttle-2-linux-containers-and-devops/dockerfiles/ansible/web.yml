@@ -1,0 +1,6 @@
+- name: Install webserver
+  hosts: localhost
+  tasks:
+    - yum: pkg=nginx state=latest
+    - shell: echo "daemon off;" >> /etc/nginx/nginx.conf
+    - shell: echo "nginx via ansible and docker" > /usr/share/nginx/html/index.html
