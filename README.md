@@ -2,6 +2,7 @@
 
 Here you will find information and resources related to all my public talks.
 
+1. [2018: Devopsdays Warsaw - Quo Vadis, containers?](2018-devopsdays-warsaw-quo-vadis-containers/)
 1. [2018: Jesień Linuksowa - History of Linux and Unix containers](2018-jesien-linuksowa-history-of-linux-unix-containers/)
 1. [2018: DevopsKRK#10 - GCP & Terraform: Diary of a combatant](2018-devopskrk-10-gcp-terraform-diary-of-combatant/)
 1. [2018: 15 Sesja Linuksowa - Oauth & Nginx](2018-15-sesja-linuksowa-oauth-nginx/)
