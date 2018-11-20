@@ -1,0 +1,20 @@
+Module                  Size  Used by
+ata_piix               26932  0 
+binfmt_misc            11188  1 
+button                  8093  0 
+crc16                   1987  1 ext4
+crc_ccitt               2019  1 ipv6
+dm_log                  9688  2 dm_mirror,dm_region_hash
+dm_mirror              13919  0 
+dm_mod                105830  2 dm_mirror,dm_log
+dm_region_hash         11149  1 dm_mirror
+evdev                  12441  3 
+ext4                  570398  1 
+fscrypto               20275  1 ext4
+ipv6                  400789  54 
+jbd2                  104989  1 ext4
+libata                240088  1 ata_piix
+mbcache                 6110  2 ext4
+mousedev               11622  0 
+psmouse                18098  0 
+scsi_mod              218820  1 libata

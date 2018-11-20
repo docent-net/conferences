@@ -1,0 +1,11 @@
+[Unit]
+Description=Simple systemd-notify integration application
+
+[Service]
+Type=notify
+Restart=always
+ExecStart=/usr/bin/python /home/docent/git/conferences/systemd-devops-meetup-wroclaw-2016/sd-notify-python/systemd-notify-app.py
+WatchdogSec=12
+
+[Install]
+WantedBy=multi-user.target
