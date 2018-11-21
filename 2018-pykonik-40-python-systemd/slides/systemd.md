@@ -32,10 +32,11 @@ template: default
 - journal / logging
 - nspawn containers
 - portable services
+- templates
 - socket activation
 - dbus
 - sd-notify
-- maybe some python? :)
+- demos
 ]
 
 ---
@@ -93,7 +94,6 @@ template: default
 #### systemd-bin
 # systemctl
 
---
 For dealing with unit files, services, targets etc we use **systemctl**
 
 ---
@@ -122,8 +122,6 @@ template: default
 #### systemd-bin
 # analyzing boot process
 
---
-
 With systemd analyzing boot process looks quite interesting<br>
 (demo, pictures!):
 
@@ -146,8 +144,6 @@ template: default
 
 #### systemd-bin
 # process confinement
-
---
 
 You may run any process under systemd / cgroups confinement:
 
@@ -181,6 +177,7 @@ template: default
 - man file-hierarchy
 - systemd-detect-virt
 - timedatectl
+- man systemd-[TAB][TAB]
 ]
 
 ---
@@ -192,8 +189,6 @@ template: default
 
 #### services & unit files
 # imperativeness vs declarativeness
-
---
 
 compare httpd init script vs unit file
 ---
@@ -216,9 +211,12 @@ socket
 
 ...
 
---
 
-**man systemd.(device|mount|automount|swap|slice|scope)**
+```bash
+man systemd.(device|mount|automount|swap|slice|scope)
+man systemd.unit
+
+```
 
 ---
 template: default
@@ -226,12 +224,8 @@ template: default
 #### services & unit files
 # runlevels & targets
 
---
-
 Before systemd we had runlevels (remember? chkconfig && 2,3,5?). Now we have
 units of type **target**. Think of targets as **unit aggregators / groups**
-
---
 
 .left[
 ```bash
@@ -243,24 +237,34 @@ units of type **target**. Think of targets as **unit aggregators / groups**
 - `systemctl isolate graphical.target` (or) `systemctl isolate runlevel5.target`
 ```]
 
+```bash
+man systemd.target
+```
+
 ---
 template: default
 
 #### services & unit files
 # services dependencies
 
---
-
    Requires, Requisite, Wants, BindsTo, PartOf, Conflicts, Before,
    After, OnFailure, PropagatesReloadTo, ReloadPropagatedFrom,
    StopWhenUnneeded, DefaultDependencies, WantedBy, RequiredBy, Also
+   
+```bash
+man systemd.unit
+man systemd.service
+man systemd.directives
+```
 ---
 template: default
 
 #### services & unit files
 # cronjobs / timers
 
---
+systemctl list-timers (--all)
+
+monotonic vs realtime
 
 .left[
 ```bash
@@ -276,44 +280,46 @@ Unit=script.service
 WantedBy=multi-user.target
 ```]
 
+```bash
+man systemd.time
+man systemd.timer
+man timedatectl
+```
+
 ---
 template: default
 
 #### services & unit files
 # cgroups control
 
---
-
    CPUShares, CPUAccounting, MemoryAccounting, MemoryLimit,
    BlockIOAccounting, BlockIOWeight, BlockIOReadBandwidth,
    BlockIOWriteBandwidth
 
+```bash
+man systemd.resource-control
+```
 ---
 template: default
 
 #### services & unit files
 # defining kill method
 
---
-
 systemctl kill
 
 KillMode, KillSignal, SendSIGHUP, SendSIGKILL
 
+```bash
+man systemd.kill
+```
 ---
 template: default
 
 # journal & logging
 
---
-
 journald resolves security in syslog (authentication)
 
---
-
 no more "disk is out of space" due to growing logs
-
---
 
 built-in anti d-dos (rate - limiter)
 
@@ -369,22 +375,23 @@ template: default
 #### journal & logging
 # grepping
 
---
-
 Simply remember to filter first!
 
 ```bash
 journalctl -b -u some.service --no-pager | grep -i 'some_keyword'
 ```
 
+```bash
+man man systemd.timer
+man journalctl
+
+```
 ---
 
 template: default
 
 #### journal & logging
 # metadata
-
---
 
 .left[
 ```bash
@@ -400,27 +407,24 @@ Filter by hostname: `journalctl _HOSTNAME=somehost`
 Add more contextual info: `journalctl -x` - (info app - defined)
 ```]
 
+```bash
+man systemd.journal-fields
+```
 ---
 template: default
 
 # nspawn containers
 
---
+.left[
+- containers built into the systemd
+- no daemon behind
+- no need to do anything with storage or network
+- quite low - level w/higher entry barrier than Docker
+]
 
-### containers built into the systemd
-
---
-
-### no daemon behind
-
---
-
-### no need to do anything with storage or network
-
---
-
-however quite low - level w/higher entry barrier than Docker
-
+```bash
+man systemd.nspawn
+```
 ---
 template: default
 
@@ -449,7 +453,64 @@ template: default
 
 # portable services
 
-big fat TODO
+.left[
+- not containers
+- standard system services run in a confinement
+- shared environment (e.g. network) w/host
+- can be resource - limited
+- see: https://media.ccc.de/v/ASG2018-200-portable_services_are_ready_to_use
+- from SD v.239
+]
+
+---
+template: default
+
+# portable services
+
+.left[
+```bash
+portablectl
+  attach foobar.raw
+    # picks service files from the image
+    # foobar*.(service|socket|target|path|timer)
+    # copies into hsots /etc/systemd/system
+    # extends w/RootDirectory (or DiskImage)
+    # creates DynamicUsers
+  enable / disable / start / stop / status
+  detach
+    # removes unit files
+    # leaves logs in journal
+    # removes DynamicUsers
+  list
+  set-limit - for setting up quota
+```
+]
+
+see walkthrough: http://0pointer.net/blog/walkthrough-for-portable-services.html
+
+see how FB uses systemd @fb scale: https://media.ccc.de/v/ASG2018-192-state_of_systemd_facebook (they are very interested in portable services now)
+
+
+---
+template: default
+
+# templates
+
+.left[
+```bash
+/etc/systemd/system/app@.service
+[Unit]
+Description=service description with param %i
+
+[Service]
+User=someuser
+ExecStart=/home/joe/bin/service -cfg %i.cfg
+```
+]
+
+```bash
+man systemd.unit
+```
 
 ---
 template: default
@@ -457,16 +518,32 @@ template: default
 #### services & unit files
 # socket activation
 
---
+usable e.g. for starting your dev environment
 
     ListenStream, ListenDatagram, ListenSequentialPacket, ListenFifo,
     ListenSpecial, ListenNetlink, ListenMessageQueue, ListenUSBFunction,
     SocketProtocol, BindToDevice...
+
+Zero downtime deployment w/systemd & Python?
+
+https://youtu.be/_OLwb8zV9r4
+
+```bash
+man systemd-socket-activate.html
+man systemd.socket
+man systemd.service
+```
     
---
+---
+template: default
+
+#### services & unit files
+# socket activation
+
 
 .left[
 ```bash
+app.socket
 [Unit]
 Description=Socket activation for simple systemd-notify app
 
@@ -475,19 +552,25 @@ ListenStream=1025
 
 [Install]
 WantedBy=sockets.target
+
+app.service
+[Unit]
+Description=some app
+
+[Service]
+User=joe
+ExecStart=/home/joe/bin/app
 ```]
 
 ---
 template: default
 
 #### systemd-bin
-# d-bus
+# dbus
 
---
+So systemd uses DBus for IPC (inter - process communication, messaging system).
 
-So systemd uses D-Bus for IPC (inter - process communication).
-
---
+External services use Dbus to communicate w/systemd
 
 .left[
 ```bash
@@ -500,35 +583,107 @@ So systemd uses D-Bus for IPC (inter - process communication).
 ---
 template: default
 
+#### Cython
+
+.left[
+- Python compiles -> C -> byte code
+- Python with C/C++ data types
+- integrate native code into Python
+- write C/C++ without writing in C/C++
+]
+
+--
+
+cython demo (**jupyter notebook demos/demo-1-cython.ipynb**)
+
+
+---
+template: default
+
 #### Python & systemd
+
+Systemd is written in C
 
 .left[
 - python-systemd: https://github.com/systemd/python-systemd - **obsolete**
-- cysystemd: https://github.com/mosquito/cysystemd
 - sdnotify: https://github.com/bb4242/sdnotify - **obsolete**
+- cysystemd: https://github.com/mosquito/cysystemd
 - pystemd: https://github.com/facebookincubator/pystemd
 ]
 
 ---
 template: default
 
-#### demo 1: working with journal/logging
+#### cysystemd
 
-cysystemd: https://github.com/mosquito/cysystemd
+.left[
+- 1 contributor (3 in total)
+- Python wrapper for systemd
+  - imports directly from sd_* C libraries
+  - see: https://github.com/mosquito/cysystemd/blob/master/cysystemd/sd_journal.pxd
+  - possible implications? changes in C libraries
+- https://github.com/mosquito/cysystemd/
+- provides sd-notify, journal read/write
+]
+
 
 ---
 template: default
 
-#### demo 2: self - healing w/sd-notify
+#### Pystemd
 
-cysystemd: https://github.com/mosquito/cysystemd
+.left[
+- Created in Facebook incubator  and used on their production
+- Communicates w/systemd via systemd interfaces exposed in DBus
+- provides ... and many more easily to be added via DBus interfaces
+- https://media.ccc.de/v/ASG2018-194-using_systemd_to_high_level_languages - see
+  for advanced usages and the whole story behind
+]
 
 ---
 template: default
 
-#### demo 3: manaigng services w/pystemd
+![Default-aligned image](pystemd-dbus.png)
 
-pystemd: https://github.com/facebookincubator/pystemd
+---
+template: default
+
+#### demo 2: cystemd - working with journal/logging
+
+---
+template: default
+
+#### demo 3: cystemd - self - healing w/sd-notify
+
+---
+template: default
+
+#### demo 4: pystemd - managing services
+
+---
+template: default
+
+#### demo 5: pystemd - resources control - network
+
+---
+template: default
+
+#### demo 6: pystemd - resources control - FS
+
+---
+template: default
+
+#### demo 7: pystemd - resources control - CPU && memory
+
+---
+template: default
+
+#### demo 8: pystemd - creating nspawn container
+
+---
+template: default
+
+#### demo 9: pystemd - socket activation + unit template + daemonize
 
 ---
 template: default
