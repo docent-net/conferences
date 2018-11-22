@@ -1,0 +1,39 @@
+# remember to import this, not whole pystemd
+import pystemd.run
+
+# run transient service
+pystemd.run(['/usr/bin/sleep', b'20'])
+
+# run as user and remain after exit (not that transient)
+unit = pystemd.run(['/usr/bin/sleep', b'20'], user=b'docent', remain_after_exit=True)
+
+# run pty w/shell:
+pystemd.run([b'/bin/bash'], wait=True, stdout=sys.stdout,  stdin=sys.stdin, pty=True)
+# remember to exit 0
+
+# run service in confined FS
+pystemd.run([b'/bin/bash'], wait=True, stdout=sys.stdout,  stdin=sys.stdin,
+pty=True, extra={'ProtectSystem': 'strict'})
+
+# see also ProtectHome=true, ProtectSystem=Strict, ReadOnlyDirectories,
+# InAccessibleDirectoreis, ReadWriteDirectories, PrivateTmp, TemporatyFileSystem,
+# BindPath, BindReadOnlyPath
+
+# limit CPU time for service
+pystemd.run([b'/bin/bash'], wait=True, stdout=sys.stdout,  stdin=sys.stdin,
+pty=True, extra={'CPUQuota': 0.1})
+
+  run e.g. and see performance `python -c 'while True: n = 2**32'`
+
+# limit memory amount for service
+pystemd.run([b'/bin/bash'], wait=True, stdout=sys.stdout,  stdin=sys.stdin,
+pty=True, extra={'MemoryMax': 5*1024*1024})
+
+  run e.g. `python -c '"pykonik" * (1024*1024*1024)'` and wait for OOM killer
+
+# run service in confined network
+pystemd.run([b'/bin/bash'], wait=True, stdout=sys.stdout,  stdin=sys.stdin,
+    pty=True, extra={'IPAddressDeny': [(socket.AF_INET, (0,0,0,0), 0)],
+    'IPAddressAllow': [(socket.AF_INET, (1,1,1,1), 32)]})
+
+  try pinging anything and later ping 1.1.1.1

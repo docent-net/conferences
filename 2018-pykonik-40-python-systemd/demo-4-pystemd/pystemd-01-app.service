@@ -1,0 +1,11 @@
+[Unit]
+Description=Simple pystemd application
+
+[Service]
+Type=notify
+Restart=always
+ExecStart=/home/docent/.virtualenvs/pykonik/bin/python /home/docent/git/conferences-public/2018-pykonik-40-python-systemd/demo-4-pystemd/pystemd-01-app.py
+WatchdogSec=12
+
+[Install]
+WantedBy=multi-user.target

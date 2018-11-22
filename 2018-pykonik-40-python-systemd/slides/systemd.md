@@ -29,10 +29,10 @@ template: default
 .left[
 - intro to systemd
 - services & unit files
+- templates
 - journal / logging
 - nspawn containers
 - portable services
-- templates
 - socket activation
 - dbus
 - sd-notify
@@ -315,6 +315,27 @@ man systemd.kill
 ---
 template: default
 
+# templates
+
+.left[
+```bash
+/etc/systemd/system/app@.service
+[Unit]
+Description=service description with param %i
+
+[Service]
+User=someuser
+ExecStart=/home/joe/bin/service -cfg %i.cfg
+```
+]
+
+```bash
+man systemd.unit
+```
+
+---
+template: default
+
 # journal & logging
 
 journald resolves security in syslog (authentication)
@@ -490,28 +511,6 @@ see walkthrough: http://0pointer.net/blog/walkthrough-for-portable-services.html
 
 see how FB uses systemd @fb scale: https://media.ccc.de/v/ASG2018-192-state_of_systemd_facebook (they are very interested in portable services now)
 
-
----
-template: default
-
-# templates
-
-.left[
-```bash
-/etc/systemd/system/app@.service
-[Unit]
-Description=service description with param %i
-
-[Service]
-User=someuser
-ExecStart=/home/joe/bin/service -cfg %i.cfg
-```
-]
-
-```bash
-man systemd.unit
-```
-
 ---
 template: default
 
@@ -594,7 +593,13 @@ template: default
 
 --
 
-cython demo (**jupyter notebook demos/demo-1-cython.ipynb**)
+cython demo (-a):
+
+```bash
+mkvirtualenv demo-1-cython
+pip install -r notebook demos/requirements.txt
+jupyter notebook demos/demo-1-cython.ipynb
+```
 
 
 ---
@@ -605,8 +610,15 @@ template: default
 Systemd is written in C
 
 .left[
-- python-systemd: https://github.com/systemd/python-systemd - **obsolete**
-- sdnotify: https://github.com/bb4242/sdnotify - **obsolete**
+- python-systemd
+  - https://github.com/systemd/python-systemd
+  - **2 years w/out updates**
+  - packaged w/e.g. Fedora
+  - using extension modules for calling C library functions
+  - see https://docs.python.org/2/extending/extending.html
+- sdnotify
+  - https://github.com/bb4242/sdnotify
+  - **rather obsolete**
 - cysystemd: https://github.com/mosquito/cysystemd
 - pystemd: https://github.com/facebookincubator/pystemd
 ]
@@ -624,6 +636,7 @@ template: default
   - possible implications? changes in C libraries
 - https://github.com/mosquito/cysystemd/
 - provides sd-notify, journal read/write
+- I use it for developing services (servers, daemons, processing etc)
 ]
 
 
@@ -638,6 +651,7 @@ template: default
 - provides ... and many more easily to be added via DBus interfaces
 - https://media.ccc.de/v/ASG2018-194-using_systemd_to_high_level_languages - see
   for advanced usages and the whole story behind
+- I use it to manage services on server
 ]
 
 ---
@@ -650,40 +664,52 @@ template: default
 
 #### demo 2: cystemd - working with journal/logging
 
+.left[
+```bash
+# workon pykonik (install libs from shared requirements.txt)
+cd demo-2-cysystemd-journal
+python ...
+```
+]
+
 ---
 template: default
 
 #### demo 3: cystemd - self - healing w/sd-notify
+
+.left[
+```bash
+cd demo-3-cysystemd-sd-notify
+sudo cp *.service /etc/systemd/system/
+# sudo systemctl start/stop <above_service> 
+# and observe journalctl entries and service status
+python ...
+```
+]
 
 ---
 template: default
 
 #### demo 4: pystemd - managing services
 
----
-template: default
-
-#### demo 5: pystemd - resources control - network
-
----
-template: default
-
-#### demo 6: pystemd - resources control - FS
-
----
-template: default
-
-#### demo 7: pystemd - resources control - CPU && memory
+.left[
+```bash
+cd demo-4-pystemd
+sudo cp *.service /etc/systemd/system/
+# sudo systemctl start/stop <above_service> 
+# and observe journalctl entries and service status
+jupyter notebook demos/demo-4-pystemd.ipynb
+```
+]
 
 ---
 template: default
 
-#### demo 8: pystemd - creating nspawn container
+#### demo 5: pystemd-run - running transient services and resources control
 
----
-template: default
+see **demo-5-pystemd-run-resources-control/pystemd-run.txt**
 
-#### demo 9: pystemd - socket activation + unit template + daemonize
+more here: https://github.com/facebookincubator/pystemd/blob/master/_docs/pystemd.run.md
 
 ---
 template: default
@@ -699,6 +725,8 @@ http://0pointer.de/blog/projects/ (look 4 systemd*)
 http://0pointer.de/blog/projects/the-biggest-myths.html
 
 http://maciej.lasyk.info/tag/learning-systemd.html
+
+SODO meetup: https://www.youtube.com/watch?v=rZgVXImr0uc
 ---
 template: default
 

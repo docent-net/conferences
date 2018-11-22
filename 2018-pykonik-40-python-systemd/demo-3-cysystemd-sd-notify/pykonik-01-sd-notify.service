@@ -1,0 +1,10 @@
+[Unit]
+Description=Simple sd-notify integration application
+
+[Service]
+Type=notify
+Restart=always
+ExecStart=/home/docent/.virtualenvs/pykonik/bin/python /home/docent/git/conferences-public/2018-pykonik-40-python-systemd/demo-3-cysystemd-sd-notify/pykonik-01-sd-notify.py
+
+[Install]
+WantedBy=multi-user.target
