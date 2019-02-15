@@ -7,7 +7,7 @@ Here you will find information and resources related to all my public talks.
 1. [2018: Jesień Linuksowa - History of Linux and Unix containers](2018-jesien-linuksowa-history-of-linux-unix-containers/)
 1. [2018: DevopsKRK#10 - GCP & Terraform: Diary of a combatant](2018-devopskrk-10-gcp-terraform-diary-of-combatant/)
 1. [2018: 15 Sesja Linuksowa - Oauth & Nginx](2018-15-sesja-linuksowa-oauth-nginx/)
-1. [2018: Sysope & Devops Kraków - systemd](2018-sysops-devops-krakow-2-systemd/)
+1. [2018: Sysops & Devops Kraków - systemd](2018-sysops-devops-krakow-2-systemd/)
 1. [2017: 14 Sesja Linuksowa - systemd](2017-14-sesja-linuksowa-systemd/)
 1. [2016: Jlabs Academy - Devops 101](2016-jlabs-academy-devops-101/)
 1. [2016: Jlabs Academy - AWS programming w/BOTO, cli and Ansible](2016-jlabs-academy-aws-programming-boto-ansible-cli-python/)
