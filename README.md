@@ -2,6 +2,7 @@
 
 Here you will find information and resources related to all my public talks.
 
+1. [2018: Coredump conference - Config Server](2018-coredump-config-server/)
 1. [2018: Pykonik #40 - Python & systemd](2018-pykonik-40-python-systemd/)
 1. [2018: Devopsdays Warsaw - Quo Vadis, containers?](2018-devopsdays-warsaw-quo-vadis-containers/)
 1. [2018: Jesień Linuksowa - History of Linux and Unix containers](2018-jesien-linuksowa-history-of-linux-unix-containers/)
