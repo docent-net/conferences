@@ -2,7 +2,7 @@
 
 Here you will find information and resources related to all my public talks.
 
-1. [2019: 16 Sesja Linuksowa - O bezpieczeństwie kontenerów linuksowych](019-16-sesja-linuksowa/)
+1. [2019: 16 Sesja Linuksowa - O bezpieczeństwie kontenerów linuksowych](2019-16-sesja-linuksowa/)
 1. [2019: OWASP - More about Linux containers security](2019-more-about-linux-containers-security/)
 1. [2018: Coredump conference - Config Server](2018-coredump-config-server/)
 1. [2018: Pykonik #40 - Python & systemd](2018-pykonik-40-python-systemd/)
