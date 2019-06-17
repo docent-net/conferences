@@ -3,6 +3,8 @@
 Here you will find information and resources related to all my public talks.
 
 1. [2019: Devopsdays Poznań - Understanding the importance of "SRE implements devops"](2019-devopsdays-cassandra-sre-implements-devops/)
+1. [2019: Geecon - Understanding the importance of "SRE implements devops"](2019-geecon-sre/)
+1. [2019: Segfault Kielce - Understanding the importance of "SRE implements devops"](2019-segfault-sre/)
 1. [2019: Jlabs Academy - More about Linux containers security](2019-04-jlabs-academy-more-about-linux-containers-security/)
 1. [2019: 16 Sesja Linuksowa - O bezpieczeństwie kontenerów linuksowych](2019-16-sesja-linuksowa/)
 1. [2019: OWASP - More about Linux containers security](2019-more-about-linux-containers-security/)
