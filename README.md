@@ -2,6 +2,9 @@
 
 Here you will find information and resources related to all my public talks.
 
+1. [2019: sphere.it - Understanding the importance of "SRE implements devops"](2019-sphere.it-cassandra-sre-implements-devops/)
+1. [2019: Pykonik - Understanding the importance of "SRE implements devops"](2019-pykonik-cassandra-sre-implements-devops/)
+1. [2019: Cloud Native Warsaw - Understanding the importance of "SRE implements devops"](2019-cloud-native-warsaw-cassandra-sre-implements-devops/)
 1. [2019: Devopsdays Poznań - Understanding the importance of "SRE implements devops"](2019-devopsdays-cassandra-sre-implements-devops/)
 1. [2019: Geecon - Understanding the importance of "SRE implements devops"](2019-geecon-sre/)
 1. [2019: Segfault Kielce - Understanding the importance of "SRE implements devops"](2019-segfault-sre/)
