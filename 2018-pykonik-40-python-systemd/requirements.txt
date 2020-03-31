@@ -1,5 +1,5 @@
 backcall==0.1.0
-bleach==3.0.2
+bleach==3.1.4
 cysystemd==0.17.2
 Cython==0.29
 decorator==4.3.0
