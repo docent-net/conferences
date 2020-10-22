@@ -2,6 +2,7 @@
 
 Here you will find information and resources related to all my public talks.
 
+1. [2020: SysopsDevops Online #20 - CloudNative Design Patterns](2020-sysops-devops-cloud-native/)
 1. [2019: Jesien Linuksowa - Understanding the importance of "SRE implements devops"](2019-jesien-linuksowa-cassandra-sre-implements-devops/)
 1. [2019: JDD - Understanding the importance of "SRE implements devops"](2019-jdd-cassandra-sre-implements-devops/)
 1. [2019: sphere.it - Understanding the importance of "SRE implements devops"](2019-sphere.it-cassandra-sre-implements-devops/)
