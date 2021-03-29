@@ -28,7 +28,7 @@ pickleshare==0.7.5
 prometheus-client==0.4.2
 prompt-toolkit==2.0.7
 ptyprocess==0.6.0
-Pygments==2.2.0
+Pygments==2.7.4
 pystemd==0.5.0
 python-dateutil==2.7.5
 pyzmq==17.1.2
